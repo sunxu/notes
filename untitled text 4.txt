@@ -109,6 +109,8 @@ $scons
 
 #rm –rf exfat-read-only
 
+sudo modprobe fuse
+
 
 
 使用su命令切换到root用户
