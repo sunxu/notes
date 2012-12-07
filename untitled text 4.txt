@@ -1,0 +1,123 @@
+apt-get install build-essential
+php5
+
+2.配置网络
+编辑/etc/network/interface
+auto eth0
+iface inet eth0 static  #设置静态IP地址
+address 192.168.1.235
+netmask 255.255.255.0 
+network 192.168.1.0
+broadcast 192.168.1.255
+gateway 192.168.1.1
+如果是要设置为自动获取ip地址就应该为
+auto eth0
+iface eth0 inet dhcp
+保存，退出，重启网络
+$/etc/init.d/networking restart
+此时已经可以ping通局域网地址，但外网仍不行
+Debian和Ubuntu一样，设置nameserver是在/etc/resolv.conf 里面，在其中添加一行：
+nameserver 192.168.1.1
+
+3.配置apt源
+vim /etc/apt/source.list 
+然后进行更新源
+apt-get -s upgrade
+apt-get update
+
+4.安装常用软件
+apt-get install openssh-server,openssh-client
+apt-get install lrzsz
+apt-get install tcpdump
+apt-get install unzip 
+apt-get install tree 
+apt-get install valgrind
+apt-get install more
+apt-get install openssl ca-certificates openssl-doc
+apt-get install mysqlserver,mysqlclient
+
+5.配置vim + ctags + taglist 
+apt-get install vim
+apt-get install ctags
+在vim的主网站下载插件taglist
+http://www.vim.org/scripts/script.php?script_id=273
+然后上传进行解压
+unzip taglist.zip -d ~/.vim解开；
+:helptags ~/.vim/doc安装文档。 
+如果要配置的更详细，这个不错
+http://blog.csdn.net/wooin/archive/2007/10/31/1858917.aspx
+
+6.安装gcc
+apt-get install gcc
+apt-get install g++
+apt-get install gdb
+apt-get install make
+apt-get install autoconf
+apt-get install automake
+apt-get install libboost-dev
+apt-get install libboost-doc
+apt-get install libxml2
+apt-get install libmysqlclient15-dev
+apt-get install manpages-dev
+apt-get install glibc-doc
+
+7.安装Python
+我使用的是Debian4.0的r4版本，默认安装的是2.4的Python，需要更新
+apt-get install python2.5 
+apt-get install python-docutils 
+apt-get install python2.5-dbg 
+apt-get install python2.5-dev 
+apt-get install python2.5-examples
+8.安装twisted
+apt-get install python-twisted-bin
+apt-get install python-twisted-runner
+安装完后，进入Python交互环境中，输入
+>>>import twisted.internet
+结果报告说无法载入该模块，我晕死。小郭在安装的时候是是先安装Zope interface，
+下载地址
+http://zope.org/Products/ZopeInterface
+，下载zope.interface-3.3.0.tar.gz
+安装:
+$python setup.py build
+$python setup.py install
+没有安装成功，因为需要python2.4 ，而当时他的Ubuntu的Python是2.5。
+直接安装twisted也出错，因为没有找到Python.h文件，所以他重新下了Python2.5进行源码安装
+我从他那里拷贝来Twisted-8.1.0.tar.bz2(tar -jxvf)解压后安装
+>>>import twisted.python
+
+
+ Linux 上挂载exFAT格式的移动硬盘
+分类： Linux 2012-01-21 15:14 790人阅读 评论(1) 收藏 举报
+由于之前下了一个文件大小大于4G，原来的移动硬盘放不下单个这么大的文件，所以把移动硬盘格式化成exFAT格式的，但是这样却造成了使用Linux系统就挂载不上这个移动硬盘，因为Linux不能识别exFAT文件系统，这让我非常郁闷，于是上网找了下，发现很多同学都遇到了这种问题，也有大牛放出了解决的方法，于是按照网上的方法来搞一下，一开始很悲剧的失败了，因为网上的解决方法是在ubuntu上的，但我的是fedora，有一个软件包死活没装上，把我搞了哥焦头烂额，最后还是在google大哥的帮助下解决了问题，真是不容易啊，下面写一下我的解决方法：
+
+
+1.安装以下软件包（用su身份）
+
+#yum install subversion scons libfuse-devel gcc
+
+（其中libfuse-devel包在ubuntu中是libfuse-dev包，就是这个不同让我浪费了不少时间）
+
+$svn co http://exfat.googlecode.com/svn/trunk/ exfat-read-only
+
+$cd exfat-read-only
+
+$scons
+
+#scons install
+
+#cd ..
+
+#rm –rf exfat-read-only
+
+
+
+使用su命令切换到root用户
+确认机器已经连网，添加debian6在163的源
+deb http://mirrors.163.com/debian squeeze main non-free contrib
+deb http://mirrors.163.com/debian-security squeeze/updates main contrib non-free
+deb-src http://mirrors.163.com/debian squeeze main non-free contrib
+deb-src http://mirrors.163.com/debian-security squeeze/updates main contrib non-free
+更新软件包
+apt-get update
+安装中文字体
+apt-get install ttf-arphic-uming
