@@ -1,0 +1,8 @@
+p   qt4-demos                       - Qt 4 examples and demos                   
+p   qt4-demos-dbg                   - Qt 4 examples and demos debugging symbols 
+p   qt4-designer                    - graphical designer for Qt 4 applications  
+p   qt4-dev-tools                   - Qt 4 development tools                    
+p   qt4-doc                         - Qt 4 API documentation                    
+p   qt4-doc-html                    - Qt 4 API documentation (HTML format)      
+p   qt4-qmake                       - Qt 4 qmake Makefile generator tool        
+p   qt4-qtconfig 
