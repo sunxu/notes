@@ -4,6 +4,7 @@ scribe - 日志收集器分析
 markdown editor
 	http://dillinger.io
 
-
+Percona Toolkit Documentation
+	http://www.percona.com/doc/percona-toolkit/2.1/index.html
 
 
