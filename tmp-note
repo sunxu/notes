@@ -1,0 +1,60 @@
+linux下查看当前shell方法。
+网上看到的，很好用，收藏一下。
+
+一、查看当前发行版可以使用的shell：
+chao@chao:~$ cat /etc/shells 
+# /etc/shells: valid login shells
+/bin/csh
+/bin/sh
+/usr/bin/es
+/usr/bin/ksh
+/bin/ksh
+/usr/bin/rc
+/usr/bin/tcsh
+/bin/tcsh
+/usr/bin/esh
+/bin/dash
+/bin/bash
+/bin/rbash
+/usr/bin/screen
+
+二、查看当前使用的 shell :  
+chao@chao:~$ echo $0
+bash
+
+
+三、查看当前用户(默 认)使用的shell: 
+chao@chao:~$ echo $SHELL
+/bin/bash
+
+四、环境变量中shell的匹配查找
+chao@chao:~$ env | grep SHELL
+SHELL=/bin/bash
+
+四、口令文件中 shell的匹配查找
+chao@chao:~$ cat /etc/passwd | grep chao
+chao:x:1000:1000:chao,340,6733,6733:/home/chao:/bin/bash
+
+五、查看当前进程
+chao@chao:~$ ps
+PID TTY          TIME CMD
+4507 pts/0    00:00:00 bash
+8688 pts/0    00:00:00 ps
+
+
+六、先查看当前shell的pid，再定位到此 shell进程
+chao@chao:~$ echo $$
+4507
+chao@chao:~$ ps -ef |grep 3052
+chao      8710  4507  0 15:30 pts/0    00:00:00 grep --color=auto 3052
+
+附：一条命令即可实现：
+chao@chao:~$ ps -ef |grep `echo $$` |grep -v grep |grep -v ps
+chao      4507  4505  0 09:30 pts/0    00:00:00 bash
+
+
+
+
+《I know》 那个要1分49秒到2分42 秒
+
+《不要不要》从头到2分25秒
