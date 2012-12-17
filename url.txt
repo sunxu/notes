@@ -8,3 +8,4 @@ Percona Toolkit Documentation
 	http://www.percona.com/doc/percona-toolkit/2.1/index.html
 
 
+http://www.cnblogs.com/lexus/archive/2011/11/15/2249238.html
