@@ -53,7 +53,7 @@ chao@chao:~$ ps -ef |grep `echo $$` |grep -v grep |grep -v ps
 chao      4507  4505  0 09:30 pts/0    00:00:00 bash
 
 
-
+apt-get install im-switch
 
 《I know》 那个要1分49秒到2分42 秒
 

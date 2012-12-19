@@ -7,5 +7,14 @@ markdown editor
 Percona Toolkit Documentation
 	http://www.percona.com/doc/percona-toolkit/2.1/index.html
 
-
 http://www.cnblogs.com/lexus/archive/2011/11/15/2249238.html
+
+在Debian中设置开机自动启动
+	http://www.eifr.com/article.php?id=448
+	http://www.cnblogs.com/wpjsolo/archive/2012/01/19/2327430.html
+
+Socket
+	http://www.cnblogs.com/skynet/archive/2010/12/12/1903949.html
+
+
+
