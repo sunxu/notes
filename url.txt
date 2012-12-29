@@ -18,4 +18,21 @@ Socket
 scribe配置文件
     https://github.com/facebook/scribe/wiki/Scribe-Configuration
     http://blog.csdn.net/shuhuai007/article/details/8228588
-    
+
+Filesystem Hierarchy Standard
+    http://www.pathname.com/fhs/pub/fhs-2.3.html
+    http://os.51cto.com/art/201202/315857.htm
+
+Understanding the bin, sbin, usr/bin , usr/sbin split
+    http://lists.busybox.net/pipermail/busybox/2010-December/074114.html
+
+深入分析Linux内核源码
+    http://oss.org.cn/kernel-book/
+
+Linux 进程间通讯之有名管道方式
+    http://blog.csdn.net/liuy5277/article/details/8374164
+
+NoSQL数据库笔谈
+    http://sebug.net/paper/databases/nosql/Nosql.html
+
+
