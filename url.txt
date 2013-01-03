@@ -35,4 +35,6 @@ Linux 进程间通讯之有名管道方式
 NoSQL数据库笔谈
     http://sebug.net/paper/databases/nosql/Nosql.html
 
+FIFO
+    http://blog.chinaunix.net/uid-298193-id-2443204.html
 
