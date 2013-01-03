@@ -55,6 +55,9 @@ chao      4507  4505  0 09:30 pts/0    00:00:00 bash
 
 apt-get install im-switch
 
-《I know》 那个要1分49秒到2分42 秒
+With recent kernels (>= 2.6.35), you can change the size of a pipe with
 
-《不要不要》从头到2分25秒
+fcntl(fd, F_SETPIPE_SZ, size)
+where size is a long. The maximum size is in /proc/sys/fs/pipe-max-size.
+
+
