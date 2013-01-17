@@ -61,3 +61,4 @@ fcntl(fd, F_SETPIPE_SZ, size)
 where size is a long. The maximum size is in /proc/sys/fs/pipe-max-size.
 
 
+http://ardownload.adobe.com/pub/adobe/reader/unix/8.x/8.1.7/chs/AdobeReader_chs-8.1.7-1.i386.deb
