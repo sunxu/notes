@@ -43,7 +43,8 @@ Snatchly
 Log
     http://www.masterzen.fr/2013/01/13/the-10-commandments-of-logging/
 
-
+Standard C 语言标准函数库速查 (Cheat Sheet)
+    http://ganquan.info/standard-c/
 
 
 
