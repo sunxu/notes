@@ -1,0 +1,64 @@
+Difference_Between_POSIX_and_Standard_C_Library
+    http://www.thejaywalker.net/2010/12/difference-between-posix-and-standard-c.html
+    
+If everything you learn about Unix development using C/C++ is POSIX then what the hell does the standard C library do?
+
+First things first. POSIX stands for "Portable Operating System Interface (for UniX)." Now that's a fancy name but the requirement becomes very clear when you see the disparity amongst so many flavors of Unix. There was a need to unify the programming of these flavors of Unix (include Linux); POSIX provides this unified API. Though the standard is not tied to just C, there is no known full implementation of POSIX in any other environment.
+
+What does POSIX contain?
+
+A lot of things! For example, threads, semaphores, file system access API, etc.
+
+What's wrong with/ limiting in Standard C Library?
+
+Standard C library (i.e., ANSI/ ISO C) assumes a very minimalist operating system. For example, no standard C library functions exist to manage threads. Heck, there is no IPC (inter process communication); in other words, ISO C doesn't assume that the program would be running on a multi-processing operating system!
+
+Again, what exactly does POSIX add to the standard C library?
+
+To answer this, one must know which header files ISO/ ANSI C contains. There are 24 header files including the well known <stdio.h>, <stdlib.h>, etc. 
+
+<assert.h>	<complex.h>	<ctype.h>	<errno.h>	<fenv.h>
+<float.h>	<inttypes.h>	<iso646.h>	<limits.h>	<locale.h>
+<math.h>	<setjmp.h>	<signal.h>	<stdarg.h>	<stdbool.h>
+<stddef.h>	<stdint.h>	<stdio.h>	<stdlib.h>	<string.h>
+<tgmath.h>	<time.h>	<whcar.h>	<wctype.h>
+
+As you can see, there is nothing like <socket.h>, <thread.h>, <sharedmemory.h>, <graphics.h>, etc., since this kind of functionality is heavily dependent on the kind of environment the application would run in while C was designed to be a "portable" language.
+
+Not having this "advanced" functionality, C becomes severely limited and each operating environment is bound to introduce its own standard for defining multi-processing, interprocess communication, advanced memory management, etc. That's where POSIX (and other kinds of libraries such as graphics toolkit) kicks in.
+
+If you have programmed for Unix/ Linux, you know that there are several library functions beyond system calls which are not in the standard C list. This includes functions like fork(), which is neither a system call nor part of the standard C library (remember C doesn't assume a multi-processing OS?). In fact, POSIX goes well beyond a programming API and defines the "environment" in which the application would run. For example, POSIX defines that there shall be a root directory "/" in the operating environment---no such definition is part of C standard library.
+
+The complete list of POSIX header files should be referred as well. Below is a listing of the header files additional to ISO C:
+
+<aio.h>	<arpa/inet.h>	<assert.h>	<ctype.h>
+<dirent.h>	<dlfcn.h>	<fcntl.h>	<fmtmsg.h>
+<fnmatch.h>	<ftw.h>	<glob.h>	<grp.h>
+<iconv.h>	<langinfo.h>	<libgen.h>	<monetary.h>
+<mqueue.h>	<ndbm.h>	<net/if.h>	<netdb.h>
+<netinet/in.h>	<netinet/tcp.h>	<nl_types.h>	<poll.h>
+<pthread.h>	<pwd.h>	<regex.h>	<sched.h>
+<search.h>	<semaphore.h>	<spawn.h>	<strings.h>
+<stropts.h>	<sys/ipc.h>	<sys/mman.h>	<sys/msg.h>
+<sys/resource.h>	<sys/select.h>	<sys/sem.h>	<sys/shm.h>
+<sys/socket.h>	<sys/stat.h>	<sys/statvfs.h>	<sys/time.h>
+<sys/times.h>	<sys/types.h>	<sys/uio.h>	<sys/un.h>
+<sys/utsname.h>	<sys/wait.h>	<syslog.h>	<tar.h>
+<termios.h>	<trace.h>	<ulimit.h>
+<unistd.h>	<utime.h>	<utmpx.h>	<wordexp.h>
+
+
+Is POSIX a superset of standard C library?
+
+
+Yes! POSIX, for example, redefines all standard C header files (sometimes augmenting them with advanced functionality), and uses the following statement in its documentation:
+The functionality described on this reference page is aligned with the ISO C standard. Any conflict between the requirements described here and the ISO C standard is unintentional. This volume of POSIX.1-2008 defers to the ISO C standard.
+
+
+What's the use of standard C library, then?
+
+
+Nothing if you are programming for a POSIX system but not all systems are POSIX compliant. To ensure maximum portability---ranging from desktop machines to handheld devices running a C runtime---restrict yourself to the standard C library and you can fly quite a distance with that.
+
+
+
