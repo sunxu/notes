@@ -46,5 +46,5 @@ Log
 Standard C 语言标准函数库速查 (Cheat Sheet)
     http://ganquan.info/standard-c/
 
-
-
+Ubuntu下更改主显示器
+http://blog.csdn.net/defeattroy/article/details/6023737
