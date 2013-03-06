@@ -51,3 +51,6 @@ Ubuntu下更改主显示器
 
 China And Open Source
     http://teddy.fr/2013/02/27/china-and-open-source/
+
+vimrc
+    http://amix.dk/vim/vimrc.html

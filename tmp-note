@@ -62,3 +62,87 @@ where size is a long. The maximum size is in /proc/sys/fs/pipe-max-size.
 
 
 http://ardownload.adobe.com/pub/adobe/reader/unix/8.x/8.1.7/chs/AdobeReader_chs-8.1.7-1.i386.deb
+
+
+
+" 关闭 vi 兼容模式
+set nocompatible
+" 自动语法高亮
+syntax on
+" 显示行号
+set number
+" 突出显示当前行
+set cursorline
+" 打开状态栏标尺
+set ruler
+" 设定 << 和 >> 命令移动时的宽度为 4
+set shiftwidth=4
+" 使得按退格键时可以一次删掉 4 个空格
+set softtabstop=4
+" 设定 tab 长度为 4
+set tabstop=4
+" 自动切换当前目录为当前文件所在的目录
+set autochdir
+
+" 搜索时忽略大小写，但在有一个或以上大写字母时仍保持对大小写敏感
+set ignorecase smartcase
+" 禁止在搜索到文件两端时重新搜索
+set nowrapscan
+" 输入搜索内容时就显示搜索结果
+set incsearch
+" 搜索时高亮显示被找到的文本
+set hlsearch
+" 关闭错误信息响铃
+set noerrorbells
+" 关闭使用可视响铃代替呼叫
+set novisualbell
+" 置空错误铃声的终端代码
+set t_vb=
+" 允许在有未保存的修改时切换缓冲区，此时的修改由 vim 负责保存
+set hidden
+" 开启新行时使用智能自动缩进
+set smartindent
+" 设定命令行的行数
+set cmdheight=2
+" 显示状态栏 (默认值为 1, 无法显示状态栏)
+set laststatus=2
+
+
+
+set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\
+” 设置在状态行显示的信息
+set foldenable              ” 开始折叠
+set foldmethod=syntax       ” 设置语法折叠
+set foldcolumn=0            ” 设置折叠区域的宽度
+setlocal foldlevel=1        ” 设置折叠层数为
+” set foldclose=all           ” 设置为自动关闭折叠
+” nnoremap <space> @=((foldclosed(line(‘.’)) < 0) ? ‘zc’ : ‘zo’)<CR>
+” 用空格键来开关折叠
+
+” return OS type, eg: windows, or linux, mac, et.st..
+function! MySys()
+if has(“win16″) || has(“win32″) || has(“win64″) || has(“win95″)
+return “windows”
+elseif has(“unix”)
+return “linux”
+endif
+endfunction
+
+” 用户目录变量$VIMFILES
+if MySys() == “windows”
+let $VIMFILES = $VIM.’/vimfiles’
+elseif MySys() == “linux”
+let $VIMFILES = $HOME.’/.vim’
+endif
+
+" UTF-8 编码
+set encoding=utf-8
+set termencoding=utf-8
+set formatoptions+=tcpmM
+set fencs=utf-8,gbk
+
+
+" 继承前一行的缩进方式
+set autoindent
+
+colorscheme molokai         ” 设定配色方案
