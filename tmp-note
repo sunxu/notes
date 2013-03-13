@@ -283,4 +283,9 @@ imap qq <Esc>
 
 
 
+au BufWinEnter * if &textwidth > 8
+\ | let w:m1=matchadd('MatchParen', printf('\%%<%dv.\%%>%dv', &textwidth+1, &textwidth-8), -1)
+\ | let w:m2=matchadd('Normal', printf('\%%>%dv.\+', &textwidth), -1)
+\ | endif
+
 
