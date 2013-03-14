@@ -90,5 +90,6 @@ nnoremap就在normal模式下(狂按esc后的模式)生效
 "    -> Helper functions
 "    -> Window
 
+vim --version | grep fall-back | awk -F ":" '{print $2}'
 
 
