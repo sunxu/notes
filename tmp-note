@@ -65,23 +65,21 @@ http://ardownload.adobe.com/pub/adobe/reader/unix/8.x/8.1.7/chs/AdobeReader_chs-
 
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer : 
-"     Sun Xu
-"         - sunxu.name@gmail.com
-"
-" Version : 
-"     0.1 - 2013/03/10 15:37:23
-"
-" Sections : 
-"     -> General
-"     -> User interface
-"     -> Mapping keys
-"    -> General
-"    -> VIM user interface
-"    -> Colors and Fonts
-"    -> Files and backups
-"    -> Text, tab and indent related
+noremap是不会递归的映射 (大概是no recursion)
+例如
+noremap Y y
+noremap y Y
+不会出现问题
+
+前缀代表生效范围
+inoremap就只在插入(insert)模式下生效
+vnoremap只在visual模式下生效
+nnoremap就在normal模式下(狂按esc后的模式)生效
+这样可以减少快捷键所用到的键位组合的个数
+一个组合可以有多种用途 就不用费劲心思思考 该映射哪个没被绑定过的键了
+
+
+
 "    -> Visual mode related
 "    -> Moving around, tabs and buffers
 "    -> Status line
@@ -90,202 +88,7 @@ http://ardownload.adobe.com/pub/adobe/reader/unix/8.x/8.1.7/chs/AdobeReader_chs-
 "    -> Spell checking
 "    -> Misc
 "    -> Helper functions
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"    -> Window
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-
-" Set how many lines of history VIM has to remember
-set history=500
-
-" Set to auto read when a file is changed from the outside
-set autoread
-
-" Set leader key
-let mapleader=","
-
-" Set working directory to the current file
-set autochdir
-
-" Change the terminal's title
-set title
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => User interface
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
-
-" Display line numbers
-set number
-
-" Highlight the screen line of the cursor with CursorLine
-set cursorline
-
-" Turn on the WiLd menu
-set wildmenu
-
-" Ignore compiled files
-set wildignore=*.o,*~,*.so*,*.a,*.pyc,*.swp
-
-"Always show current position
-set ruler
-
-" Height of the command bar
-set cmdheight=2
-
-" A buffer becomes hidden when it is abandoned
-set hidden
-
-" Configure backspace so it acts as it should act
-set backspace=eol,start,indent
-
-" Allow backspace and cursor keys to wrap 
-set whichwrap+=<,>,h,l
-
-" Don't redraw while executing macros (good performance config)
-set lazyredraw
-
-" Show matching brackets when text indicator is over them
-set showmatch
-
-" How many tenths of a second to blink when matching brackets
-set match=2
-
-" turn off error beep
-set noerrorbells
-
-" Turn off visual bell
-set novisualbell
-
-" Turn off screen flash
-set t_vb=
-
-" Time in ms waited for a key code or mapped key sequence to complete
-set tmenu=500
-
-" Display incomplete commands
-set showcmd             
-
-
-""""""""""""""""""""""
-" Search
-""""""""""""""""""""""""""
-" Ignore case when searching
-set ignorecase
-
-" When searching try to be smart about cases 
-set smartcase
-
-" Highlight search results
-set hlsearch
-
-" Makes search act like search in modern browsers
-set incsearch
-
-" For regular expressions turn magic on
-set magic
-
-" Disable search wrap around the end of the file.
-set nowrapscan
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Switch on syntax highlighting
-syntax enable
-
-" Overrule settings with the defaults
-syntax on
-
-" Set color scheme 
-colorscheme desert
-
-" Highlights too long lines
-if exists('+colorcolumn')
-  set colorcolumn=80
-else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-endif
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Set utf8 as standard encoding 
-set encoding=utf8
-
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
-
-" Turn off automatic creation of backup files
-set nobackup
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use spaces instead of tabs
-set expandtab
-
-" Be smart when using tabs
-set smarttab
-
-" Number of spaces that a <Tab> counts for while performing editing operations
-set softtabstop=4
-
-" Number of spaces to use for each step of (auto)indent.
-set shiftwidth=4
-
-" Number of spaces that a <Tab> in the file counts for
-set tabstop=4
-
-" which characters may cause a line break
-set breakat=" ^I!@*-+;:,./?"
-
-" Only wrap at a character in the breakat option
-set linebreak
-
-" Wrap lines
-set wrap 
-
-" Set the wrap width
-set textwidth=80
-
-" Auto indent
-set autoindent 
-
-" Smart indent
-set smartindent 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Mapping keys
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Treat long lines as break lines
-map j gj
-map k gk
-
-" Arrow keys are unacceptable
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
-
-" Exit insert mode
-imap qq <Esc>
-
-
-
-
-
-
-au BufWinEnter * if &textwidth > 8
-\ | let w:m1=matchadd('MatchParen', printf('\%%<%dv.\%%>%dv', &textwidth+1, &textwidth-8), -1)
-\ | let w:m2=matchadd('Normal', printf('\%%>%dv.\+', &textwidth), -1)
-\ | endif
 
 
