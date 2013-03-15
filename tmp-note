@@ -92,4 +92,11 @@ nnoremap就在normal模式下(狂按esc后的模式)生效
 
 vim --version | grep fall-back | awk -F ":" '{print $2}'
 
+git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen
+(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 
+git config --global alias.lg "log --color --graph
+--pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen (%cr) %C(bold
+blue)<%an>%Creset' --abbrev-commit --"
+
+git lg
