@@ -70,5 +70,6 @@ How to set Safari to use PAC file in Mac OS X Lion
 vim命令速查
     http://jrmiii.com/attachments/Vim.pdf
 
-
+    http://www.vim.org/scripts/download_script.php?src_id=4700
+    http://www.vim.org/scripts/script.php?script_id=3881
 
