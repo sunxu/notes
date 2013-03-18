@@ -52,14 +52,8 @@ Ubuntu下更改主显示器
 China And Open Source
     http://teddy.fr/2013/02/27/china-and-open-source/
 
-vimrc
-    http://amix.dk/vim/vimrc.html
-
 vim color scheme test
     http://code.google.com/p/vimcolorschemetest/
-
-vimrc
-    https://github.com/spicycode/Vimlander-2-The-Quickening
 
 vim分屏
     http://coolshell.cn/articles/1679.html
@@ -67,19 +61,14 @@ vim分屏
 Vim for TextMate Fans
     http://alexyoung.org/2006/10/22/vim-for-textmate-fans/
 
-Vim 的补全模式加速器，轻松玩转全部 15 种自动补全模式
-    http://bluegene8210.is-programmer.com/posts/27873.html
-
-blog
-    http://haridas.in/vim-as-your-ide.html
-
 proxy switcher
     http://www.freeproxyswitcher.com/
 
 How to set Safari to use PAC file in Mac OS X Lion
     http://www.dbform.com/html/2011/1718.html
 
-
+vim命令速查
+    http://jrmiii.com/attachments/Vim.pdf
 
 
 
