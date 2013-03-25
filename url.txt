@@ -70,6 +70,32 @@ How to set Safari to use PAC file in Mac OS X Lion
 vim命令速查
     http://jrmiii.com/attachments/Vim.pdf
 
-    http://www.vim.org/scripts/download_script.php?src_id=4700
-    http://www.vim.org/scripts/script.php?script_id=3881
+VIM-Project Plugin
+    http://www.vim.org/scripts/script.php?script_id=69
+    http://www.cppblog.com/DrMagic/archive/2007/11/19/36964.html
+
+Git常用命令
+    http://blog.jobbole.com/34503/
+
+翻墙
+    http://www.iqlinkus.com/home.action
+
+Linux内核入门，包教会
+    http://os.51cto.com/art/201010/230450.htm
+
+C语言中函数参数入栈的顺序
+    http://www.cnblogs.com/xkfz007/archive/2012/03/27/2420158.html
+
+每个程序员应该了解的内存方面的知识
+    http://www.oschina.net/translate/what-every-programmer-should-know-about-memory-part1
+    http://www.oschina.net/translate/what-every-programmer-should-know-about-cpu-cache-part2
+    http://www.oschina.net/translate/what-every-programmer-should-know-about-virtual-memory-part3
+
+Vim插件收录
+    http://tieba.baidu.com/p/2060828392
+
+HIT CS科班对计算机专业素养的理解
+    http://www.1point3acres.com/bbs/thread-26964-1-1.html
+
+
 
