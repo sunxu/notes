@@ -112,3 +112,18 @@ endfor
 svn checkout http://vimide.googlecode.com/svn/trunk/linux vimide
 
 
+
+
+
+[user]
+	name = sunxu
+	email = sunxu.name@gmail.com
+[core]
+	editor = vim
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+    br = branch
+    df = diff
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen (%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
