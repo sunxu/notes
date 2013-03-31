@@ -66,21 +66,6 @@ http://ardownload.adobe.com/pub/adobe/reader/unix/8.x/8.1.7/chs/AdobeReader_chs-
 
 
 
-noremap是不会递归的映射 (大概是no recursion)
-例如
-noremap Y y
-noremap y Y
-不会出现问题
-
-前缀代表生效范围
-inoremap就只在插入(insert)模式下生效
-vnoremap只在visual模式下生效
-nnoremap就在normal模式下(狂按esc后的模式)生效
-这样可以减少快捷键所用到的键位组合的个数
-一个组合可以有多种用途 就不用费劲心思思考 该映射哪个没被绑定过的键了
-
-
-
 "    -> Visual mode related
 "    -> Moving around, tabs and buffers
 "    -> Status line
