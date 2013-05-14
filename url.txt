@@ -98,4 +98,17 @@ HIT CS科班对计算机专业素养的理解
     http://www.1point3acres.com/bbs/thread-26964-1-1.html
 
 
+http://what-if.xkcd.com/
+
+http://blog.csdn.net/wallwind/article/details/8801923
+
+http://www.usermodelinux.org/
+
+http://www.commandlinefu.com/commands/browse
+http://www.shell-fu.org/
+http://irising.me/2011/05/930/
+
+shell
+    http://os.51cto.com/art/201211/366274.htm
+
 
