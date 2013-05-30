@@ -97,6 +97,8 @@ Vim插件收录
 HIT CS科班对计算机专业素养的理解
     http://www.1point3acres.com/bbs/thread-26964-1-1.html
 
+Executable Shared Libraries
+    http://marklodato.github.com/2009/10/03/executable-shared-libraries.html
 
 http://what-if.xkcd.com/
 
