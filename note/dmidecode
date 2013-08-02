@@ -1,0 +1,6 @@
+dmidecode 工具允许在 Linux 系统下获取有关硬件方面的信息，包括 bios, system, 
+baseboard, chassis, processor, memory, cache, connector 和 slot。另外，可以
+使用 lscpu 或者通过 /sys/devices/system/cpu 查看 cpu 和 cache 信息。
+PS: DMI，即 Desktop Management Interface。也有被称为 SMBIOS，即 System 
+Management BIOS。
+

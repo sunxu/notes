@@ -1,0 +1,18 @@
+相较于 loop 1，loop 2 会运行多快？
+int[] arr = new int[64 * 1024 * 1024];
+Loop 1: for (int i = 0; i < arr.Length; i++) arr[i] *= 3;
+Loop 2: for (int i = 0; i < arr.Length; i += 16) arr[i] *= 3;
+第二个循环只做了第一个约6%的工作，但在现代机器上，两者几乎运行相同时间。
+原因跟内存有关，循环执行时间长短由数组的内存访问次数决定的，而非整型数的
+乘法运算次数。
+
+
+loop 1，loop 2 哪个较快？
+int steps = 256 * 1024 * 1024;
+int[] a = new int[2];
+Loop 1: for (int i=0; i<steps; i++) { a[0]++; a[0]++; }
+Loop 2: for (int i=0; i<steps; i++) { a[0]++; a[1]++; }
+loop 2 约比 loop 1 快一倍，原因跟操作指令依赖性有关，跟流水线有关。
+
+
+

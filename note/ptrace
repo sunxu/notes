@@ -1,0 +1,4 @@
+GDB原理的关键是ptrace，该系统调用提供了可以观察和控制另一个进程执行的方法。
+#include <sys/ptrace.h>
+long ptrace(enum __ptrace_request request, pid_t pid,void *addr, void *data);
+
