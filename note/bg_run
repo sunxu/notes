@@ -1,0 +1,9 @@
+后台执行程序，关闭shell之后要继续运行:
+1. nohup
+$ nohup ./<script_name> >/dev/null 2>&1 &
+2. disown
+$ ./<script_name> >/dev/null 2>&1 & 
+$ disown
+可以通过以下命令来监视程序是否仍在后台运行:
+$ ps axl | grep <script_name>
+
